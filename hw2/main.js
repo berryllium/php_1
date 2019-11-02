@@ -7,7 +7,7 @@ function calc(url, callback) {
 
   if (window.XMLHttpRequest) {
     xhr = new XMLHttpRequest();
-  } else if (window.ActiveXObject) { 
+  } else if (window.ActiveXObject) {
     xhr = new ActiveXObject("Microsoft.XMLHTTP");
   }
 
@@ -21,22 +21,32 @@ function calc(url, callback) {
   xhr.send();
 }
 
-document.querySelector('input[type="submit"]').addEventListener('click', (event) => {
-  event.preventDefault()
-  let id = +event.target.dataset.id
-  result = document.querySelector('.result'+id)
-  switch (id) {
-    case 1: {
-      let a = document.querySelector('#input1_1').value
-      let b = document.querySelector('#input1_2').value
-      let url = `functions.php?id=1&a=${a}&b=${b}`
-      if ((a !== '') && (b !== '') ) {
-        calc(url, res)
+document.querySelectorAll('input[type="submit"]').forEach(el => {
+  el.addEventListener('click', (event) => {
+    event.preventDefault()
+    let id = +event.target.dataset.id
+    result = document.querySelector('.result' + id)
+    console.log(`Задача №${id}`)
+    switch (id) {
+      case 1: {
+        let a = document.querySelector('#input1_1').value
+        let b = document.querySelector('#input1_2').value
+        let url = `functions.php?id=${id}&a=${a}&b=${b}`
+        if ((a !== '') && (b !== '')) {
+          calc(url, res)
+        }
+        else alert('Заплните все поля!')
+        break
       }
-      else alert('Заплните все поля!')
-      break
+      case 2: {
+        let a = document.querySelector('#input2_1').value
+        let url = `functions.php?id=${id}&a=${a}`
+        if ((a !== '')) {
+          calc(url, res)
+        }
+        else alert('Заплните все поля!')
+        break
+      }
     }
-      
-    
-  }
+  })
 })

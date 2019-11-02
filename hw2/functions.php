@@ -16,6 +16,61 @@ function sum($a, $b)
   }
 }
 
+function task2($a) {
+  $str = '';
+  switch ($a) {
+    case 0: {
+      $str .= $a++ . ', ';
+    }
+    case 1: {
+      $str .= $a++ . ', ';
+    }
+    case 2: {
+      $str .= $a++ . ', ';
+    }
+    case 3: {
+      $str .= $a++ . ', ';
+    }
+    case 4: {
+      $str .= $a++ . ', ';
+    }
+    case 5: {
+      $str .= $a++ . ', ';
+    }
+    case 6: {
+      $str .= $a++ . ', ';
+    }
+    case 7: {
+      $str .= $a++ . ', ';
+    }
+    case 8: {
+      $str .= $a++ . ', ';
+    }
+    case 9: {
+      $str .= $a++ . ', ';
+    }
+    case 10: {
+      $str .= $a++ . ', ';
+    }
+    case 11: {
+      $str .= $a++ . ', ';
+    }
+    case 12: {
+      $str .= $a++ . ', ';
+    }
+    case 13: {
+      $str .= $a++ . ', ';
+    }
+    case 14: {
+      $str .= $a++ . ', ';
+    }
+    case 15: {
+      $str .= $a++ . ', ';
+    }
+  }
+  return $str;
+}
+
 
 switch ($id) {
   case 1: {
@@ -23,11 +78,18 @@ switch ($id) {
       $a = $_GET['a'];
       $b = $_GET['b'];
     }
-    echo "Результат: <b>" . sum($a, $b) . '<b>';
+    echo 'Результат: <b>' . sum($a, $b) . '<b>';
+    break;
+  }
+  case 2: {
+    if (isset($_GET['a'])) {
+      $a = $_GET['a'];
+    }
+    echo 'Результат: <b>' . task2($a) . '<b>';
     break;
   }
   default: {
-    echo 'nothing';
+    echo 'error';
   }
 }
 
