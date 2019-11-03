@@ -65,7 +65,11 @@ function task2($a) {
       $str .= $a++ . ', ';
     }
     case 15: {
-      $str .= $a++ . ', ';
+      $str .= $a++;
+      break;
+    }
+    default: {
+      $str = 'Число должно быть в диапазоне от 0 до 15!';
     }
   }
   return $str;
