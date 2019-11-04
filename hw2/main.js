@@ -53,6 +53,11 @@ document.querySelectorAll('input[type="submit"]').forEach(el => {
         else alert('Заполните все поля!')
         break
       }
+      case 7: {
+        let url = `functions.php?id=${id}`
+        getResult(url, result)
+        break
+      }
     }
   })
 })
