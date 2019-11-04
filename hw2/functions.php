@@ -85,22 +85,22 @@ function sub($a,$b) {return $a - $b;}
 function mult($a,$b) {return $a * $b;}
 function div($a,$b) {return $a / $b;}
 
-function task3($a,$op,$b) {
-  switch ($op) {
+function mathOperation($arg1,$arg2,$operation) {
+  switch ($operation) {
     case 'plus': {
-      return sum($a,$b);
+      return sum($arg1,$arg2);
       break;
     }
     case 'sub': {
-      return sub($a,$b);
+      return sub($arg1,$arg2);
       break;
     }
     case 'mult': {
-      return mult($a,$b);
+      return mult($arg1,$arg2);
       break;
     }
     case 'div': {
-      return div($a,$b);
+      return div($arg1,$arg2);
       break;
     }
     default: {
@@ -110,7 +110,7 @@ function task3($a,$op,$b) {
   }
 }
 
-
+// отдаем результат на страничку
 switch ($id) {
   case 1: {
     if (isset($_GET['a']) && isset($_GET['b'])) {
@@ -129,10 +129,10 @@ switch ($id) {
   }
   case 3: {
     if (isset($_GET['a']) && isset($_GET['op']) && isset($_GET['b'])) {
-      $a = $_GET['a'];
-      $op = $_GET['op'];
-      $b = $_GET['b'];
-      echo 'Результат: <b>' . task3($a,$op,$b) . '<b>';
+      $arg1 = $_GET['a'];
+      $arg2 = $_GET['b'];
+      $operation = $_GET['op'];
+      echo 'Результат: <b>' . mathOperation($arg1,$arg2,$operation) . '<b>';
       break;
     }
   }
