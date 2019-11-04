@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Home work 2</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -24,10 +25,10 @@
     <h3>Решение: </h3>
     <form if="form1" action="#">
       <label for="input1_1">Введите переменную a: </label>
-      <input type="text" id="input1_1" name="1_a" required><br>
+      <input type="text" id="input1_1" name="1_a" required>
       <label for="input1_2">Введите переменную b: </label>
-      <input type="text" id="input1_2" name="1_b" required><br>
-      <input type="submit" value="Выполнить" data-id="1"><br><br>
+      <input type="text" id="input1_2" name="1_b" required>
+      <input type="submit" value="Выполнить" data-id="1">
     </form>
     <div class="result1">тут будет результат</div>
   </div>
@@ -39,10 +40,32 @@
       <h3>Решение: </h3>
       <form if="form2" action="#">
         <label for="input2_1">Введите переменную a: </label>
-        <input type="text" id="input2_1" name="2_a" required><br>
-        <input type="submit" value="Выполнить" data-id="2"><br><br>
+        <input type="text" id="input2_1" name="2_a" required>
+        <input type="submit" value="Выполнить" data-id="2">
       </form>
       <div class="result2">тут будет результат</div>
+    </div>
+    <hr>
+
+  <div class="task3">
+      <h2>Задача №3 и №4</h2>
+      <p>Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.</p>
+      <h3>Решение: </h3>
+      <form if="form3" action="#">
+        <label for="input3_1">Введите переменную a: </label>
+        <input type="text" id="input3_1" name="3_a" required>
+        <label for="input3_1">Выберите операцию: </label>
+        <select id="input3_2" name="3_x">
+          <option value="plus" selected>+</option>
+          <option value="sub">-</option>
+          <option value="mult">*</option>
+          <option value="div">/</option>
+        </select>
+        <label for="input3_1">Введите переменную b: </label>
+        <input type="text" id="input3_3" name="3_b" required>
+        <input type="submit" value="Выполнить" data-id="3">
+      </form>
+      <div class="result3">тут будет результат</div>
     </div>
     <hr>
 

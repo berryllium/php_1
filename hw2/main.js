@@ -32,6 +32,17 @@ document.querySelectorAll('input[type="submit"]').forEach(el => {
         else alert('Заполните все поля!')
         break
       }
+      case 3: {
+        let a = document.querySelector('#input3_1').value
+        let op = document.querySelector('#input3_2').value
+        let b = document.querySelector('#input3_3').value
+        let url = `functions.php?id=${id}&a=${a}&op=${op}&b=${b}`
+        if ((a !== '') && (b !== ''))  {
+          getResult(url, result)
+        }
+        else alert('Заполните все поля!')
+        break
+      }
     }
   })
 })
