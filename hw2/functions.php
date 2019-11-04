@@ -110,6 +110,31 @@ function mathOperation($arg1,$arg2,$operation) {
   }
 }
 
+// задание 6
+function power($val,$pow) {
+  if ($val == 0) {
+    return 0;
+  }
+  if ($pow == 0) {
+    return 1;
+  }
+  elseif ($pow == 1) {
+    return $val;
+  }
+  elseif ($pow == -1) {
+    return 1/$val;
+  }
+  elseif ($pow > 0) {
+    return power($val,$pow-1)*$val;
+  }
+  elseif ($pow < 0) {
+    $pow = -$pow;
+    $val = 1/$val;
+    return power($val,$pow-1)*$val;
+  }
+  else 'Ошибка вычислений';
+}
+
 // отдаем результат на страничку
 switch ($id) {
   case 1: {
@@ -133,6 +158,14 @@ switch ($id) {
       $arg2 = $_GET['b'];
       $operation = $_GET['op'];
       echo 'Результат: <b>' . mathOperation($arg1,$arg2,$operation) . '<b>';
+      break;
+    }
+  }
+  case 6: {
+    if (isset($_GET['val']) && isset($_GET['pow'])) {
+      $val = $_GET['val'];
+      $pow = $_GET['pow'];
+      echo 'Результат: <b>' . power($val,$pow) . '<b>';
       break;
     }
   }
