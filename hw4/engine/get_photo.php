@@ -23,9 +23,8 @@ $path_big = '../data/images/big/';
 $path_small = '../data/images/small/';
 if(in_array($photo['type'], $mas)) {
     if (move_uploaded_file($photo['tmp_name'],$path_big.$photo['name'])) {
-        // header("Location: /hw4/index.php");
         imageresize($path_small.$photo['name'],$path_big.$photo['name'],320,320,75);
-
+        header("Location: /hw4/index.php");
     }
 }
 else echo 'Можно загрузить только изображения в формате .jpg, .png или .gif';
